@@ -1,1 +1,22 @@
-Hello
+#include<stdio.h>
+int get2smallest(int arr[], int n) 
+{
+	int a,b;
+int first =a; int sec = b;
+   for (int i = 0; i < n; i++) {
+      if (arr[i] < first) {
+         sec = first;
+         first = arr[i];
+      }else if (arr[i] < sec && arr[i]!=first) {
+         sec = arr[i];
+     }
+ }
+ printf("first smallest element is %d\n",first);
+ printf("second smallest element is %d\n",sec);
+}
+int main() {
+   int array[] = {12,13,1,10,34,1};
+   int n = sizeof(array) / sizeof(array[0]);
+   get2smallest(array,n);
+   return 0;
+}
