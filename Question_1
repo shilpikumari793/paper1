@@ -1,3 +1,4 @@
+//C program to find smallest and second smallest elements
 #include<stdio.h>
 #include<limits.h>
 int get2smallest(int arr[], int n) 
@@ -5,9 +6,11 @@ int get2smallest(int arr[], int n)
 int first , sec;
 first = sec =INT_MAX;
    for (int i = 0; i < n; i++) {
+   /* If current element is smaller than first then update both first and second */
       if (arr[i] < first) {
          sec = first;
          first = arr[i];
+         /*If arr[i] is in between first and second then update second */
       }else if (arr[i] < sec && arr[i]!=first) {
          sec = arr[i];
      }
@@ -15,6 +18,7 @@ first = sec =INT_MAX;
  printf("first smallest element is %d\n",first);
  printf("second smallest element is %d\n",sec);
 }
+/* driver program to check above function */
 int main() {
    int array[] = {12,13,1,10,34,1};
    int n = sizeof(array) / sizeof(array[0]);
